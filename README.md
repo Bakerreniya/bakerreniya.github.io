@@ -1,0 +1,470 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ashawniz Nailz | South Carolina Nail Tech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-gradient: linear-gradient(135deg,#ff80df 0%,#d66bff 35%,#b347ff 65%,#ff80df 100%);
+  --card-bg: rgba(255, 255, 255, 0.22);
+  --card-border: rgba(255, 255, 255, 0.55);
+  --card-shadow: 0 18px 40px rgba(183, 74, 255, 0.45);
+  --text-main: #ffffff;
+  --text-soft: #fff5ff;
+  --heading: #ffe4ff;
+  --btn-shadow: 0 14px 30px rgba(183, 74, 255, 0.6);
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:"Poppins",sans-serif;
+  background:var(--bg-gradient);
+  color:var(--text-main);
+  min-height:100vh;
+  line-height:1.6;
+}
+
+.page{
+  background:radial-gradient(circle at top,rgba(255,255,255,.25),transparent 60%);
+}
+
+.container{
+  max-width:1080px;
+  margin:0 auto;
+  padding:0 1.3rem;
+}
+
+section{padding:2.3rem 0;}
+
+header{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(18px);
+  background:rgba(255,255,255,.18);
+  border-bottom:1px solid rgba(255,255,255,.4);
+}
+
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.8rem 0;
+}
+
+.logo-group{display:flex;align-items:center;gap:.7rem;}
+.logo-circle{
+  width:40px;height:40px;border-radius:999px;
+  background:conic-gradient(from 160deg,#ffb6ee,#ffc7f5,#d28eff);
+  box-shadow:0 0 18px rgba(255,200,245,.9);
+}
+.logo-text-main{font-family:"Pacifico";font-size:1.3rem;color:var(--heading);}
+.logo-text-sub{font-size:.68rem;color:var(--text-soft);letter-spacing:.18em;}
+
+.nav-links{display:flex;gap:1.3rem;}
+.nav-links a{color:var(--text-soft);font-size:.72rem;text-transform:uppercase;}
+.nav-btn{
+  background:linear-gradient(120deg,#ffb6ee,#d28eff);
+  padding:.5rem 1rem;border-radius:var(--radius-pill);color:#fff;
+  box-shadow:var(--btn-shadow);
+  border:1px solid rgba(255,255,255,.7);
+}
+.nav-toggle{display:none;}
+
+@media(max-width:768px){
+  .nav-links{
+    position:absolute;top:100%;left:0;width:100%;
+    background:rgba(255,255,255,.75);
+    flex-direction:column;gap:1rem;padding:1rem;
+    transform:scaleY(0);opacity:0;pointer-events:none;transition:.2s;
+  }
+  .nav-links.open{transform:scaleY(1);opacity:1;pointer-events:auto;}
+  .nav-toggle{
+    display:block;background:none;border:none;
+    font-size:1.6rem;color:#fff;
+  }
+}
+
+.hero{padding:3rem 0 2rem;}
+.hero h1{
+  font-size:clamp(2.15rem,4vw,3rem);
+  color:var(--heading);
+  margin-bottom:.85rem;
+  text-shadow:0 0 18px rgba(255,220,255,.55);
+}
+.hero-subtitle{
+  max-width:32rem;
+  font-size:.97rem;
+  color:var(--text-soft);
+  margin-bottom:1.3rem;
+}
+.btn-primary,.btn-secondary{
+  padding:.85rem 1.7rem;border-radius:var(--radius-pill);
+  border:1px solid rgba(255,255,255,.8);
+  font-size:.86rem;display:inline-flex;gap:.4rem;
+  align-items:center;text-transform:uppercase;
+}
+.btn-primary{
+  background:linear-gradient(120deg,#ffb6ee,#ff94da,#d28eff);
+  color:#fff;
+}
+.btn-secondary{
+  background:rgba(255,255,255,.3);
+  color:#fff;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:1rem;
+  color:#ffe4ff;
+  text-shadow:0 0 14px rgba(255,220,255,.6);
+}
+
+.card{
+  background:var(--card-bg);
+  border-radius:var(--radius-lg);
+  border:1px solid var(--card-border);
+  box-shadow:var(--card-shadow);
+  backdrop-filter:blur(18px);
+  padding:1.4rem;
+}
+h3{color:#ffe4ff;margin-bottom:.4rem;}
+
+.location-grid,.services-grid{display:grid;gap:1.2rem;}
+@media(min-width:768px){
+  .location-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(min-width:900px){
+  .services-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+
+.service-row{
+  margin-bottom:0.9rem;
+}
+.service-row-top{
+  display:flex;
+  justify-content:space-between;
+  font-size:.9rem;
+}
+.service-row-top span:last-child{
+  font-weight:600;
+}
+.service-photo{
+  margin-top:.4rem;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 10px 24px rgba(183,74,255,.45);
+}
+.service-photo img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+.service-note{
+  font-size:.8rem;
+  color:var(--text-soft);
+  margin-top:.2rem;
+}
+
+footer{
+  padding:2rem 0;
+  border-top:1px solid rgba(255,255,255,.7);
+  margin-top:1rem;
+}
+.footer-pill{
+  padding:.32rem .7rem;
+  border-radius:var(--radius-pill);
+  background:rgba(255,255,255,.35);
+  border:1px solid rgba(255,255,255,.85);
+  color:#c246a8;
+  font-size:.78rem;
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<header>
+  <div class="container">
+    <nav class="nav">
+      <div class="logo-group">
+        <div class="logo-circle"></div>
+        <div>
+          <div class="logo-text-main">Ashawniz Nailz</div>
+          <div class="logo-text-sub">South Carolina Nail Tech</div>
+        </div>
+      </div>
+
+      <button class="nav-toggle"
+        onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#policies">Policies</a>
+        <a href="#location">Location</a>
+        <a href="#contact" class="nav-btn">💅🏾 Book Now</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Nails done right.<br>Every style. Every color. Every time.</h1>
+      <p class="hero-subtitle">
+        Registered cosmetologist offering acrylic sets, pedicures, and custom nail art for clients who want
+        their nails to match their energy.
+      </p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:.7rem;">
+        <a class="btn-primary" href="https://www.tiktok.com/@ashawniz.nailz" target="_blank" rel="noopener">📲 DM to Book</a>
+        <a class="btn-secondary" href="#services">👛 View Prices</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="container">
+      <h2 class="section-title">About & Location</h2>
+
+      <div class="location-grid">
+        <div class="card">
+          <h3>The Experience</h3>
+          <p>
+            Every appointment is personal — bring your inspo, your ideas, or just your vibe and your nails will match
+            your style and lifestyle.
+          </p>
+          <p style="margin-top:.4rem;">
+            Soft, classy, colorful, short, long, or extra — all styles are welcome in the chair.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Studio & Travel</h3>
+          <p><strong>Studio:</strong> K&amp;K Beauty Bar, 101 W Main St, Timmonsville, SC</p>
+          <p><strong>Walk-ins:</strong> 10AM – 5PM</p>
+          <p><strong>Travel Nails:</strong> Available around South Carolina · DM for travel fee</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES WITH PHOTOS -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services & Visual Examples</h2>
+
+      <div class="services-grid">
+        <!-- Manicures & Acrylic Sets -->
+        <div class="card">
+          <h3>Manicures & Acrylic Sets</h3>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Gel Manicure</span>
+              <span>$35</span>
+            </div>
+            <div class="service-photo">
+              <img src="https://i.postimg.cc/nrFpjJJC/IMG_6837.jpg" alt="Gel manicure example">
+            </div>
+          </div>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Design Set</span>
+              <span>$65</span>
+            </div>
+            <div class="service-photo">
+              <img src="https://i.postimg.cc/zBq9pFPT/IMG_6836.jpg" alt="Design set example">
+            </div>
+          </div>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Gel Design Manicure</span>
+              <span>$45</span>
+            </div>
+            <div class="service-photo">
+              <img src="https://i.postimg.cc/QC8h933t/IMG_6838.jpg" alt="Gel design manicure example">
+            </div>
+          </div>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Charm / Design Set</span>
+              <span>$80</span>
+            </div>
+            <div class="service-photo">
+              <img src="https://i.postimg.cc/mkLBzssk/IMG_6834.jpg" alt="Charm and design set example">
+            </div>
+          </div>
+
+          <p class="service-note">
+            <strong>Unlimited designs:</strong> All design, charm, and charm/design sets include unlimited charms and
+            unlimited designs — no extra per charm.
+          </p>
+        </div>
+
+        <!-- Pedicures -->
+        <div class="card">
+          <h3>Pedicures</h3>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Basic Pedicure</span>
+              <span>$40</span>
+            </div>
+            <div class="service-photo">
+              <img src="https://i.postimg.cc/C5hSBggR/IMG_6835.jpg" alt="Basic pedicure example">
+            </div>
+          </div>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Deluxe Pedicure</span>
+              <span>$65</span>
+            </div>
+            <div class="service-photo">
+              <img src="https://i.postimg.cc/vTrhKJgr/IMG_6842.jpg" alt="Deluxe pedicure example">
+            </div>
+          </div>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Spa Pedicure</span>
+              <span>$50</span>
+            </div>
+          </div>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Luxurious Pedicure</span>
+              <span>$75</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Services -->
+        <div class="card">
+          <h3>Other Services</h3>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Nail Repair</span>
+              <span>$10 each</span>
+            </div>
+          </div>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Soak Off</span>
+              <span>$15</span>
+            </div>
+          </div>
+
+          <div class="service-row">
+            <div class="service-row-top">
+              <span>Deposit</span>
+              <span>$20</span>
+            </div>
+            <p class="service-note">
+              Non-refundable deposit required to book. Goes toward your total.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking CTA -->
+      <div id="contact" class="card" style="margin-top:1.6rem;background:linear-gradient(120deg,#ffb6ee,#ff94da,#d28eff);border-color:#fff;box-shadow:0 16px 40px rgba(183,74,255,.7);color:#fff;">
+        <h3 style="margin-bottom:.4rem;">Ready to book?</h3>
+        <p style="font-size:.9rem;margin-bottom:.8rem;">
+          Send a DM with your name, service, preferred date/time, and inspo photo so your set can be planned before you arrive.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:.6rem;">
+          <a class="btn-primary" href="https://www.tiktok.com/@ashawniz.nailz" target="_blank" rel="noopener" style="background:#fff;color:#d144a7;border-color:#fff;">
+            📲 DM on TikTok
+          </a>
+          <a class="btn-secondary" href="https://instagram.com/ashawniz.nailz" target="_blank" rel="noopener" style="background:rgba(255,255,255,.25);border-color:#fff;">
+            💖 DM on Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NO GALLERY SECTION — REMOVED -->
+
+  <!-- POLICIES -->
+  <section id="policies">
+    <div class="container">
+      <h2 class="section-title">Policies</h2>
+
+      <div class="services-grid">
+        <div class="card">
+          <h3>Deposit Policy</h3>
+          <p>$20 non-refundable deposit required to secure appointments.</p>
+          <p>Deposit goes toward your total balance.</p>
+          <p>No refunds once services are complete.</p>
+        </div>
+
+        <div class="card">
+          <h3>Late / No-Show</h3>
+          <p>10 minute grace period.</p>
+          <p>$10 late fee after 10 minutes.</p>
+          <p>After 15 minutes, your appointment may be canceled.</p>
+          <p>No call / no show may result in being blocked from future bookings.</p>
+        </div>
+
+        <div class="card">
+          <h3>Nail Prep & Payments</h3>
+          <p>Please arrive with bare nails unless you booked a soak-off.</p>
+          <p>Soak-offs are not included unless added to your service.</p>
+          <p>Cash or Cash App accepted. (Cash App: <strong>$AshawnizNailz</strong>)</p>
+          <p>Any disrespect can result in being blocked as a client.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="margin-bottom:1rem;">
+      <div class="logo-text-main" style="font-size:1.1rem;">Ashawniz Nailz</div>
+      <div class="logo-text-sub">South Carolina Nail Tech · Pink &amp; Purple Vibes Only</div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;">
+      <a class="footer-pill" href="https://www.tiktok.com/@ashawniz.nailz" target="_blank" rel="noopener">TikTok · @ashawniz.nailz</a>
+      <a class="footer-pill" href="https://instagram.com/ashawniz.nailz" target="_blank" rel="noopener">Instagram · @ashawniz.nailz</a>
+      <a class="footer-pill" href="https://facebook.com/ashawniz.nailz" target="_blank" rel="noopener">Facebook · @ashawniz.nailz</a>
+    </div>
+
+    <div style="font-size:.8rem;color:#fff5ff;">Website designed by your web designer 👑</div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener("click", ()=>{
+    const navLinks=document.querySelector('.nav-links');
+    if(navLinks && navLinks.classList.contains("open")){
+      navLinks.classList.remove("open");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
